@@ -1,0 +1,61 @@
+---
+title: "rmardown入门"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::downcute:
+    highlight: kate
+---
+```{r setup, include=FALSE}
+## Global options
+knitr::opts_chunk$set(cache = TRUE)
+```
+
+#  代码区
++ 默认代码运行
+```{r 你好世界}
+print('hello world')
+```
+
++ 仅显示代码不运行，eval=FALSE
+```{r, eval=FALSE}
+print('hello world')
+```
+
++ 代码仅运行不显示，include=FALSE
+```{r include=FALSE}
+a <- 2+4
+```
+
++ 显示代码，echo=TRUE
+```{r echo=TRUE}
+print(a)
+```
+
++ 仅显示结果，不显示代码，echo=F
+```{r, echo=FALSE}
+print(a)
+```
+
+
++ 代码和输出结果一起显示，collapse=TRUE，且去掉##（若想全局均如此，可在上方global options设置）
+```{r, collapse=TRUE, comment=""}
+print('hello world')
+```
+
++ 运行代码前面加上>，prompt=TRUE
+```{r, collapse=TRUE, comment="", prompt=TRUE}
+print('hello world')
+```
+
+# 输出图片
+```{r}
+plot(1:5, 1:5)
+```
+
+# 输出表格，R内置数据集iris
+```{r}
+head(iris, 3)
+```
+
+
+
